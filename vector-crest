@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Vettoriale nell'Archiviazione | Vector in Archiving</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .lang-btn.active {
+            background-color: #1d4ed8; /* blue-700 */
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-4xl">
+        
+        <!-- Language Switcher -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6 sticky top-4 z-10">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="switchLang('it')" class="lang-btn it active text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">Italiano</button>
+                <button onclick="switchLang('en')" class="lang-btn en text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">English</button>
+                <button onclick="switchLang('es')" class="lang-btn es text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">Español</button>
+                <button onclick="switchLang('pt')" class="lang-btn pt text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">Português (BR)</button>
+                <button onclick="switchLang('de')" class="lang-btn de text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">Deutsch</button>
+                <button onclick="switchLang('fr')" class="lang-btn fr text-sm sm:text-base font-medium py-2 px-4 rounded-md transition-colors duration-200 ease-in-out bg-gray-200 hover:bg-blue-600 hover:text-white">Français</button>
+            </div>
+        </div>
+
+        <main id="main-content" class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+
+            <!-- Italian Content -->
+            <div id="it" class="content-section active">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Il Vettoriale nell'Archiviazione</h1>
+                <p class="mb-6 text-lg">Nel contesto dell'archiviazione digitale, in particolare per immagini e grafica, il termine "vettoriale" si riferisce a un metodo di rappresentazione delle immagini basato su formule matematiche anziché su una griglia di pixel. Questa distinzione è fondamentale e ha implicazioni significative per la qualità, la flessibilità e l'efficienza di archiviazione.</p>
+                <p class="mb-6">Per comprendere il vettoriale, è utile confrontarlo con il suo opposto: il raster (o bitmap).</p>
+
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Immagini Raster (o Bitmap)</h2>
+                        <p class="mb-2"><strong class="font-semibold">Come funzionano:</strong> Le immagini raster sono composte da una griglia di singoli punti colorati, chiamati pixel. Ogni pixel ha una posizione e un colore specifici. Formati comuni includono JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vantaggi:</strong> Ideali per fotografie e immagini con sfumature complesse, dove la fedeltà cromatica e il dettaglio sono cruciali.</p>
+                        <p class="mb-2"><strong class="font-semibold">Svantaggi:</strong> Sono "dipendenti dalla risoluzione". Se si ingrandisce un'immagine raster oltre la sua risoluzione originale, i pixel diventano visibili (l'immagine "sgrana" o "pixella"), perdendo nitidezza e qualità. Questo le rende meno adatte per applicazioni che richiedono scalabilità senza perdita di qualità.</p>
+                        <p><strong class="font-semibold">Archiviazione:</strong> Richiedono spazio di archiviazione proporzionale alla loro risoluzione e profondità di colore.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Immagini Vettoriali</h2>
+                        <p class="mb-2"><strong class="font-semibold">Come funzionano:</strong> Le immagini vettoriali sono definite da oggetti geometrici (punti, linee, curve, poligoni) descritti da equazioni matematiche. Ad esempio, un cerchio non è una serie di pixel rotondi, ma una formula che ne definisce il centro, il raggio e il colore del bordo/riempimento. Formati comuni includono SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vantaggi:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Scalabilità Illimitata:</strong> Possono essere ingrandite o rimpicciolite a qualsiasi dimensione senza alcuna perdita di qualità.</li>
+                            <li><strong>Dimensioni del File:</strong> Spesso, per grafiche semplici (loghi, icone), i file vettoriali sono più piccoli dei corrispettivi raster.</li>
+                            <li><strong>Modificabilità:</strong> Gli elementi sono oggetti distinti e possono essere facilmente modificati.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Svantaggi:</strong> Non sono adatte per rappresentare fotografie o immagini con sfumature complesse e dettagli realistici.</p>
+                        <p><strong class="font-semibold">Archiviazione:</strong> Generalmente più efficienti in termini di spazio per grafiche che beneficiano della loro natura scalabile.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Il Vettoriale nell'Archiviazione (Specificamente per Stemmi Nobiliari)</h2>
+                        <p class="mb-4">Nel contesto dell'archiviazione di stemmi nobiliari, l'approccio vettoriale è particolarmente vantaggioso per diverse ragioni:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Fedeltà e Precisione:</strong> Garantisce che ogni linea, forma e colore sia riprodotto con la massima precisione.</li>
+                            <li><strong>Scalabilità per Usi Diversi:</strong> Un archivio di stemmi vettoriali può servire a molteplici scopi (web, stampa piccola e grande, incisioni).</li>
+                            <li><strong>Adattabilità e Modificabilità:</strong> Rendere le operazioni di modifica semplici e non distruttive.</li>
+                            <li><strong>Efficienza di Archiviazione:</strong> Offre un rapporto qualità/dimensione impareggiabile per la grafica lineare.</li>
+                        </ul>
+                    </section>
+
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">In sintesi</h3>
+                        <p>L'archiviazione "vettoriale" significa conservare le immagini in un formato che ne garantisce la perfetta riproducibilità e scalabilità, basandosi sulla loro descrizione matematica. Per contenuti come gli stemmi araldici, questa metodologia è la scelta ottimale per preservarne la qualità e massimizzarne l'utilità nel lungo termine.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- English Content -->
+            <div id="en" class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Vector in Archiving</h1>
+                <p class="mb-6 text-lg">In the context of digital archiving, particularly for images and graphics, the term "vector" refers to a method of representing images based on mathematical formulas rather than a grid of pixels. This distinction is fundamental and has significant implications for quality, flexibility, and storage efficiency.</p>
+                <p class="mb-6">To understand vector, it is useful to compare it with its opposite: raster (or bitmap).</p>
+                
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Raster Images (or Bitmap)</h2>
+                        <p class="mb-2"><strong class="font-semibold">How they work:</strong> Raster images are composed of a grid of individual colored dots, called pixels. Each pixel has a specific position and color. Common formats include JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Advantages:</strong> Ideal for photographs and images with complex gradients, where color fidelity and detail are crucial.</p>
+                        <p class="mb-2"><strong class="font-semibold">Disadvantages:</strong> They are "resolution-dependent." If you enlarge a raster image beyond its original resolution, the pixels become visible (the image "pixelates"), losing sharpness and quality. This makes them less suitable for applications requiring scalability without quality loss.</p>
+                        <p><strong class="font-semibold">Storage:</strong> They require storage space proportional to their resolution and color depth.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Vector Images</h2>
+                        <p class="mb-2"><strong class="font-semibold">How they work:</strong> Vector images are defined by geometric objects (points, lines, curves, polygons) described by mathematical equations. For example, a circle is not a series of round pixels, but a formula that defines its center, radius, and border/fill color. Common formats include SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Advantages:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Unlimited Scalability:</strong> They can be enlarged or shrunk to any size without any loss of quality or pixelation.</li>
+                            <li><strong>File Size:</strong> Often, for simple graphics (logos, icons, illustrations), vector files are smaller than their high-resolution raster counterparts.</li>
+                            <li><strong>Modifiability:</strong> The elements of a vector image are distinct objects and can be easily modified.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Disadvantages:</strong> Not suitable for representing photographs or images with complex gradients and realistic details.</p>
+                        <p><strong class="font-semibold">Storage:</strong> Generally more space-efficient for graphics that benefit from their scalable nature.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Vector in Archiving (Specifically for Coats of Arms)</h2>
+                        <p class="mb-4">In the context of archiving coats of arms, the vector approach is particularly advantageous for several reasons:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Fidelity and Precision:</strong> Ensures that every line, shape, and color is reproduced with maximum precision.</li>
+                            <li><strong>Scalability for Different Uses:</strong> A vector archive of coats of arms can serve multiple purposes (web, small and large format printing, engravings).</li>
+                            <li><strong>Adaptability and Modifiability:</strong> Makes editing operations simple and non-destructive.</li>
+                            <li><strong>Storage Efficiency:</strong> Offers an unparalleled quality-to-size ratio for linear graphics.</li>
+                        </ul>
+                    </section>
+
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">In summary</h3>
+                        <p>"Vector" archiving means storing images in a format that guarantees their perfect reproducibility and scalability, based on their mathematical description. For content like heraldic coats of arms, this methodology is the optimal choice to preserve their quality and maximize their long-term utility.</p>
+                    </section>
+                </div>
+            </div>
+            
+            <!-- Spanish Content -->
+            <div id="es" class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">El Vector en el Almacenamiento</h1>
+                <p class="mb-6 text-lg">En el contexto del almacenamiento digital, especialmente para imágenes y gráficos, el término "vectorial" se refiere a un método de representación de imágenes basado en fórmulas matemáticas en lugar de una cuadrícula de píxeles. Esta distinción es fundamental y tiene implicaciones significativas para la calidad, la flexibilidad y la eficiencia del almacenamiento.</p>
+                <p class="mb-6">Para comprender lo vectorial, es útil compararlo con su opuesto: el raster (o mapa de bits).</p>
+
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Imágenes Rasterizadas (o de Mapa de Bits)</h2>
+                        <p class="mb-2"><strong class="font-semibold">Cómo funcionan:</strong> Las imágenes rasterizadas están compuestas por una cuadrícula de puntos de colores individuales, llamados píxeles. Cada píxel tiene una posición y un color específicos. Los formatos comunes incluyen JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Ventajas:</strong> Ideales para fotografías e imágenes con degradados complejos, donde la fidelidad del color y el detalle son cruciales.</p>
+                        <p class="mb-2"><strong class="font-semibold">Desventajas:</strong> Son "dependientes de la resolución". Si se amplía una imagen rasterizada más allá de su resolución original, los píxeles se hacen visibles (la imagen se "pixela"), perdiendo nitidez y calidad. Esto las hace menos adecuadas para aplicaciones que requieren escalabilidad sin pérdida de calidad.</p>
+                        <p><strong class="font-semibold">Almacenamiento:</strong> Requieren un espacio de almacenamiento proporcional a su resolución y profundidad de color.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Imágenes Vectoriales</h2>
+                        <p class="mb-2"><strong class="font-semibold">Cómo funcionan:</strong> Las imágenes vectoriales se definen mediante objetos geométricos (puntos, líneas, curvas, polígonos) descritos por ecuaciones matemáticas. Por ejemplo, un círculo no es una serie de píxeles redondos, sino una fórmula que define su centro, radio y color de borde/relleno. Los formatos comunes incluyen SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Ventajas:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Escalabilidad Ilimitada:</strong> Se pueden ampliar o reducir a cualquier tamaño sin pérdida de calidad ni pixelación.</li>
+                            <li><strong>Tamaño del Archivo:</strong> A menudo, para gráficos simples (logotipos, iconos), los archivos vectoriales son más pequeños que sus equivalentes rasterizados de alta resolución.</li>
+                            <li><strong>Modificabilidad:</strong> Los elementos son objetos distintos y se pueden modificar fácilmente.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Desventajas:</strong> No son adecuadas para representar fotografías o imágenes con degradados complejos y detalles realistas.</p>
+                        <p><strong class="font-semibold">Almacenamiento:</strong> Generalmente más eficientes en espacio para gráficos que se benefician de su naturaleza escalable.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">El Vector en el Almacenamiento (Específicamente para Escudos de Armas)</h2>
+                        <p class="mb-4">En el contexto del almacenamiento de escudos de armas, el enfoque vectorial es particularmente ventajoso por varias razones:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Fidelidad y Precisión:</strong> Garantiza que cada línea, forma y color se reproduzca con la máxima precisión.</li>
+                            <li><strong>Escalabilidad para Diferentes Usos:</strong> Un archivo vectorial de escudos de armas puede servir para múltiples propósitos (web, impresión en formato pequeño y grande, grabados).</li>
+                            <li><strong>Adaptabilidad y Modificabilidad:</strong> Hace que las operaciones de edición sean sencillas y no destructivas.</li>
+                            <li><strong>Eficiencia de Almacenamiento:</strong> Ofrece una relación calidad/tamaño inigualable para los gráficos lineales.</li>
+                        </ul>
+                    </section>
+
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">En resumen</h3>
+                        <p>El almacenamiento "vectorial" significa conservar las imágenes en un formato que garantiza su perfecta reproducibilidad y escalabilidad, basándose en su descripción matemática. Para contenidos como los escudos heráldicos, esta metodología es la opción óptima para preservar su calidad y maximizar su utilidad a largo plazo.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Brazilian Portuguese Content -->
+            <div id="pt" class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">O Vetor no Armazenamento</h1>
+                <p class="mb-6 text-lg">No contexto do armazenamento digital, especialmente para imagens e gráficos, o termo "vetorial" refere-se a um método de representação de imagens baseado em fórmulas matemáticas em vez de uma grade de pixels. Essa distinção é fundamental e tem implicações significativas para a qualidade, flexibilidade e eficiência do armazenamento.</p>
+                <p class="mb-6">Para entender o vetorial, é útil compará-lo com seu oposto: o raster (ou bitmap).</p>
+
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Imagens Raster (ou Bitmap)</h2>
+                        <p class="mb-2"><strong class="font-semibold">Como funcionam:</strong> Imagens raster são compostas por uma grade de pontos coloridos individuais, chamados pixels. Cada pixel tem uma posição e cor específicas. Formatos comuns incluem JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vantagens:</strong> Ideais para fotografias e imagens com gradientes complexos, onde a fidelidade de cor e o detalhe são cruciais.</p>
+                        <p class="mb-2"><strong class="font-semibold">Desvantagens:</strong> São "dependentes da resolução". Se você ampliar uma imagem raster além de sua resolução original, os pixels se tornam visíveis (a imagem "pixeliza"), perdendo nitidez e qualidade. Isso as torna menos adequadas para aplicações que exigem escalabilidade sem perda de qualidade.</p>
+                        <p><strong class="font-semibold">Armazenamento:</strong> Exigem espaço de armazenamento proporcional à sua resolução e profundidade de cor.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Imagens Vetoriais</h2>
+                        <p class="mb-2"><strong class="font-semibold">Como funcionam:</strong> Imagens vetoriais são definidas por objetos geométricos (pontos, linhas, curvas, polígonos) descritos por equações matemáticas. Por exemplo, um círculo não é uma série de pixels redondos, mas uma fórmula que define seu centro, raio e cor da borda/preenchimento. Formatos comuns incluem SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vantagens:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Escalabilidade Ilimitada:</strong> Podem ser ampliadas ou reduzidas para qualquer tamanho sem qualquer perda de qualidade ou pixelização.</li>
+                            <li><strong>Tamanho do Arquivo:</strong> Frequentemente, para gráficos simples (logotipos, ícones), os arquivos vetoriais são menores que seus correspondentes raster de alta resolução.</li>
+                            <li><strong>Modificabilidade:</strong> Os elementos são objetos distintos e podem ser facilmente modificados.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Desvantagens:</strong> Não são adequadas para representar fotografias ou imagens com gradientes complexos e detalhes realistas.</p>
+                        <p><strong class="font-semibold">Armazenamento:</strong> Geralmente mais eficientes em espaço para gráficos que se beneficiam de sua natureza escalável.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">O Vetor no Armazenamento (Especificamente para Brasões de Armas)</h2>
+                        <p class="mb-4">No contexto do armazenamento de brasões de armas, a abordagem vetorial é particularmente vantajosa por várias razões:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Fidelidade e Precisão:</strong> Garante que cada linha, forma e cor seja reproduzida com a máxima precisão.</li>
+                            <li><strong>Escalabilidade para Diferentes Usos:</strong> Um arquivo vetorial de brasões pode servir a múltiplos propósitos (web, impressão em pequeno e grande formato, gravuras).</li>
+                            <li><strong>Adaptabilidade e Modificabilidade:</strong> Torna as operações de edição simples e não destrutivas.</li>
+                            <li><strong>Eficiência de Armazenamento:</strong> Oferece uma relação qualidade/tamanho incomparável para gráficos lineares.</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">Em resumo</h3>
+                        <p>O armazenamento "vetorial" significa guardar imagens em um formato que garante sua perfeita reprodutibilidade e escalabilidade, com base em sua descrição matemática. Para conteúdos como brasões heráldicos, essa metodologia é a escolha ideal para preservar sua qualidade e maximizar sua utilidade a longo prazo.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- German Content -->
+            <div id="de" class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Vektor in der Archivierung</h1>
+                <p class="mb-6 text-lg">Im Kontext der digitalen Archivierung, insbesondere für Bilder und Grafiken, bezieht sich der Begriff "Vektor" auf eine Methode zur Darstellung von Bildern, die auf mathematischen Formeln anstelle eines Pixelrasters basiert. Diese Unterscheidung ist grundlegend und hat erhebliche Auswirkungen auf Qualität, Flexibilität und Speichereffizienz.</p>
+                <p class="mb-6">Um Vektorgrafiken zu verstehen, ist es hilfreich, sie mit ihrem Gegenstück zu vergleichen: Rastergrafiken (oder Bitmaps).</p>
+
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Rasterbilder (oder Bitmap)</h2>
+                        <p class="mb-2"><strong class="font-semibold">Wie sie funktionieren:</strong> Rasterbilder bestehen aus einem Gitter einzelner farbiger Punkte, den sogenannten Pixeln. Jedes Pixel hat eine bestimmte Position und Farbe. Gängige Formate sind JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vorteile:</strong> Ideal für Fotos und Bilder mit komplexen Farbverläufen, bei denen Farbtreue und Detailreichtum entscheidend sind.</p>
+                        <p class="mb-2"><strong class="font-semibold">Nachteile:</strong> Sie sind "auflösungsabhängig". Wenn man ein Rasterbild über seine ursprüngliche Auflösung hinaus vergrößert, werden die Pixel sichtbar (das Bild "verpixelt"), was zu einem Verlust an Schärfe und Qualität führt. Dies macht sie weniger geeignet für Anwendungen, die eine Skalierbarkeit ohne Qualitätsverlust erfordern.</p>
+                        <p><strong class="font-semibold">Speicherung:</strong> Sie benötigen Speicherplatz proportional zu ihrer Auflösung und Farbtiefe.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Vektorbilder</h2>
+                        <p class="mb-2"><strong class="font-semibold">Wie sie funktionieren:</strong> Vektorbilder werden durch geometrische Objekte (Punkte, Linien, Kurven, Polygone) definiert, die durch mathematische Gleichungen beschrieben werden. Ein Kreis ist beispielsweise keine Ansammlung runder Pixel, sondern eine Formel, die seinen Mittelpunkt, Radius und die Farbe von Rand/Füllung definiert. Gängige Formate sind SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Vorteile:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Unbegrenzte Skalierbarkeit:</strong> Sie können ohne Qualitätsverlust oder Verpixelung auf jede beliebige Größe vergrößert oder verkleinert werden.</li>
+                            <li><strong>Dateigröße:</strong> Oft sind Vektordateien für einfache Grafiken (Logos, Symbole) kleiner als ihre hochauflösenden Raster-Pendants.</li>
+                            <li><strong>Bearbeitbarkeit:</strong> Die Elemente sind separate Objekte und können leicht modifiziert werden.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Nachteile:</strong> Nicht geeignet für die Darstellung von Fotos oder Bildern mit komplexen Farbverläufen und realistischen Details.</p>
+                        <p><strong class="font-semibold">Speicherung:</strong> Im Allgemeinen speichereffizienter für Grafiken, die von ihrer skalierbaren Natur profitieren.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Vektor in der Archivierung (Speziell für Adelswappen)</h2>
+                        <p class="mb-4">Im Kontext der Archivierung von Adelswappen ist der Vektoransatz aus mehreren Gründen besonders vorteilhaft:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Genauigkeit und Präzision:</strong> Stellt sicher, dass jede Linie, Form und Farbe mit maximaler Präzision wiedergegeben wird.</li>
+                            <li><strong>Skalierbarkeit für verschiedene Zwecke:</strong> Ein Vektorarchiv von Wappen kann für vielfältige Zwecke genutzt werden (Web, Klein- und Großformatdruck, Gravuren).</li>
+                            <li><strong>Anpassungsfähigkeit und Bearbeitbarkeit:</strong> Macht Bearbeitungsvorgänge einfach und nicht-destruktiv.</li>
+                            <li><strong>Speichereffizienz:</strong> Bietet ein unübertroffenes Qualitäts-Größen-Verhältnis für lineare Grafiken.</li>
+                        </ul>
+                    </section>
+
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">Zusammenfassend</h3>
+                        <p>Die "vektorielle" Archivierung bedeutet, Bilder in einem Format zu speichern, das ihre perfekte Reproduzierbarkeit und Skalierbarkeit auf der Grundlage ihrer mathematischen Beschreibung gewährleistet. Für Inhalte wie heraldische Wappen ist diese Methode die optimale Wahl, um ihre Qualität zu erhalten und ihren langfristigen Nutzen zu maximieren.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- French Content -->
+            <div id="fr" class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Le Vecteur dans l'Archivage</h1>
+                <p class="mb-6 text-lg">Dans le contexte de l'archivage numérique, en particulier pour les images et les graphiques, le terme "vectoriel" fait référence à une méthode de représentation des images basée sur des formules mathématiques plutôt que sur une grille de pixels. Cette distinction est fondamentale et a des implications significatives pour la qualité, la flexibilité et l'efficacité du stockage.</p>
+                <p class="mb-6">Pour comprendre le vectoriel, il est utile de le comparer à son opposé : le raster (ou bitmap).</p>
+
+                <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Images Matricielles (ou Bitmap)</h2>
+                        <p class="mb-2"><strong class="font-semibold">Comment elles fonctionnent :</strong> Les images matricielles sont composées d'une grille de points colorés individuels, appelés pixels. Chaque pixel a une position et une couleur spécifiques. Les formats courants incluent JPEG, PNG, GIF, BMP, TIFF.</p>
+                        <p class="mb-2"><strong class="font-semibold">Avantages :</strong> Idéales pour les photographies et les images avec des dégradés complexes, où la fidélité des couleurs et les détails sont cruciaux.</p>
+                        <p class="mb-2"><strong class="font-semibold">Inconvénients :</strong> Elles sont "dépendantes de la résolution". Si vous agrandissez une image matricielle au-delà de sa résolution d'origine, les pixels deviennent visibles (l'image "pixellise"), perdant en netteté et en qualité. Cela les rend moins adaptées aux applications nécessitant une mise à l'échelle sans perte de qualité.</p>
+                        <p><strong class="font-semibold">Stockage :</strong> Elles nécessitent un espace de stockage proportionnel à leur résolution et à leur profondeur de couleur.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Images Vectorielles</h2>
+                        <p class="mb-2"><strong class="font-semibold">Comment elles fonctionnent :</strong> Les images vectorielles sont définies par des objets géométriques (points, lignes, courbes, polygones) décrits par des équations mathématiques. Par exemple, un cercle n'est pas une série de pixels ronds, mais une formule qui définit son centre, son rayon et la couleur de son contour/remplissage. Les formats courants incluent SVG, AI, EPS, CDR.</p>
+                        <p class="mb-2"><strong class="font-semibold">Avantages :</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Évolutivité Illimitée :</strong> Elles peuvent être agrandies ou réduites à n'importe quelle taille sans aucune perte de qualité ni pixellisation.</li>
+                            <li><strong>Taille du Fichier :</strong> Souvent, pour les graphiques simples (logos, icônes), les fichiers vectoriels sont plus petits que leurs équivalents matriciels en haute résolution.</li>
+                            <li><strong>Modifiabilité :</strong> Les éléments sont des objets distincts et peuvent être facilement modifiés.</li>
+                        </ul>
+                        <p class="mt-2 mb-2"><strong class="font-semibold">Inconvénients :</strong> Ne conviennent pas à la représentation de photographies ou d'images avec des dégradés complexes et des détails realistes.</p>
+                        <p><strong class="font-semibold">Stockage :</strong> Généralement plus efficaces en termes d'espace pour les graphiques qui bénéficient de leur nature évolutive.</p>
+                    </section>
+                    
+                    <section>
+                        <h2 class="text-2xl font-bold mb-3 text-blue-700">Le Vecteur dans l'Archivage (Spécifiquement pour les Blasons)</h2>
+                        <p class="mb-4">Dans le contexte de l'archivage des blasons, l'approche vectorielle est particulièrement avantageuse pour plusieurs raisons :</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>Fidélité et Précision :</strong> Garantit que chaque ligne, forme et couleur est reproduite avec une précision maximale.</li>
+                            <li><strong>Évolutivité pour Divers Usages :</strong> Une archive vectorielle de blasons peut servir à de multiples fins (web, impression petit et grand format, gravures).</li>
+                            <li><strong>Adaptabilité et Modifiabilité :</strong> Rend les opérations d'édition simples et non destructives.</li>
+                            <li><strong>Efficacité du Stockage :</strong> Offre un rapport qualité/taille inégalé pour les graphiques linéaires.</li>
+                        </ul>
+                    </section>
+
+                    <section class="border-t pt-6 mt-6 border-gray-200">
+                        <h3 class="text-xl font-bold mb-3">En résumé</h3>
+                        <p>L'archivage "vectoriel" consiste à conserver les images dans un format qui garantit leur parfaite reproductibilité et leur évolutivité, en se basant sur leur description mathématique. Pour des contenus tels que les blasons héraldiques, cette méthodologie est le choix optimal pour préserver leur qualité et maximiser leur utilité à long terme.</p>
+                    </section>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Function to switch language
+        function switchLang(lang) {
+            // A list of available languages
+            const availableLangs = ['it', 'en', 'es', 'pt', 'de', 'fr'];
+            // If the language is not available, do nothing
+            if (!availableLangs.includes(lang)) return;
+
+            // Set the lang attribute of the html tag
+            document.documentElement.lang = lang;
+
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected language section
+            const activeSection = document.getElementById(lang);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+
+            // Update active state for buttons
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            const activeButton = document.querySelector('.lang-btn.' + lang);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        // Initialize based on URL query string or default to 'it'
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langFromQuery = urlParams.get('lang');
+            const allowedLangs = ['it', 'en', 'es', 'pt', 'de', 'fr'];
+            
+            if (langFromQuery && allowedLangs.includes(langFromQuery)) {
+                switchLang(langFromQuery);
+            } else {
+                switchLang('en'); // Default language
+            }
+        });
+    </script>
+
+</body>
+</html>
